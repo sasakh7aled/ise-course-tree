@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>شجرة المقررات والمتطلبات السابقة</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="title-block">
+        <h1>🎓 شجرة المقررات والمتطلبات السابقة</h1>
+        <p>قسم هندسة نظم المعلومات - 5 مستويات دراسية</p>
+      </div>
+
+      <div class="actions">
+        <button id="zoom-in" type="button">🔍+</button>
+        <button id="zoom-out" type="button">🔍−</button>
+        <button id="reset-view" type="button">↩ إعادة ضبط</button>
+        <button id="clear-selection" class="danger hidden" type="button">✕ إلغاء التحديد</button>
+      </div>
+    </header>
+
+    <section class="legend" aria-label="دليل الألوان">
+      <strong>دليل الألوان:</strong>
+      <div id="legend-levels" class="legend-items"></div>
+      <span class="legend-item">
+        <span class="swatch optional-swatch"></span>
+        مقرر اختياري
+      </span>
+      <span class="hint">💡 اضغط على مقرر لرؤية سلسلة المتطلبات</span>
+    </section>
+
+    <section class="workspace">
+      <div id="canvas" class="canvas" aria-label="شجرة المقررات">
+        <svg id="course-svg" width="100%" height="100%" viewBox="0 0 1400 1020" role="img" aria-label="خريطة مقررات هندسة نظم المعلومات">
+          <defs id="svg-defs"></defs>
+          <g id="viewport"></g>
+        </svg>
+      </div>
+
+      <aside class="side-panel" aria-label="تفاصيل المقرر">
+        <div id="details"></div>
+        <div id="stats" class="stats"></div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
